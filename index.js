@@ -12,8 +12,10 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/', function(req, res) {
+     console.log(req.body.result);
     if(!req.body.result.metadata)
     {
+       
         return res.json({
             speech: "Sorry Metadata not found",
             displayText: "Sorry Metadata not found",
