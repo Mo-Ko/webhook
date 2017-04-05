@@ -73,10 +73,7 @@ restService.post('/slack-test', function(req, res) {
         }
     });
 });
-
-
- console.log("Server up and listening");
-
+alert("Please enter correct user name and password.")
 restService.listen((process.env.PORT || 8000), function() {
     console.log("Server up and listening");
 });
