@@ -13,16 +13,7 @@ restService.use(bodyParser.json());
 
 restService.post('/', function(req, res) {
      console.log(req.body.result);
-     return res.json({
-            speech: "Sorry Metadata not found",
-            displayText: "Sorry Metadata not found",
-            source: 'webhook-echo-sample'
-        }); 
-    if(!req.body.result.metadata)
-    {
-       
-        
-    }
+  
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     
     console.log(req.body.result.metadata.intentName);
