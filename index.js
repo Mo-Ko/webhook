@@ -26,7 +26,7 @@ restService.post('/', function(req, res) {
         });    
     }else{
         return res.json({
-            speech: "Good Morning",
+            speech: "ohh great your lucky number is" + speech,
             displayText: "GOoD Morning",
             source: 'webhook-echo-sample'
     });
