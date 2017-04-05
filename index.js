@@ -14,11 +14,22 @@ restService.use(bodyParser.json());
 restService.post('/', function(req, res) {
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     console.log(req.body.result.metadata.intentName);
-	return res.json({
-        speech: speech,
-        displayText: speech,
-        source: 'webhook-echo-sample'
+    
+    if(req.body.result.metadata.intentName == "Echo"){
+        return res.json({
+            speech: speech,
+            displayText: speech,
+            source: 'webhook-echo-sample'
+        });    
+    }else{
+        return res.json({
+            speech: "Good Morning",
+            displayText: "GOoD Morning",
+            source: 'webhook-echo-sample'
     });
+    }
+
+	
 });
 
 restService.post('/slack-test', function(req, res) {
