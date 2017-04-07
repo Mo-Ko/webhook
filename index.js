@@ -14,17 +14,17 @@ restService.use(bodyParser.json());
 restService.post('/', function(req, res) {
      console.log("****** \n" + req.body.result.metadata.intentNam);
   
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+ //   var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     
     console.log(req.body.result.metadata.intentName);
     
-    if(req.body.result.metadata.intentName == "Play"){
+    if(req.body.result.parameters.cmd == "Play"){
         return res.json({
             speech: "Ok Playing the Video",
             displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
-    }if if(req.body.result.metadata.intentName == "Stop"){
+    }else if(req.body.result.parameters.cmd == "Stop"){
         return res.json({
             speech: "Ok Stoping the Video",
             displayText: "Ok Stoping the Video",
