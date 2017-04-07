@@ -18,10 +18,10 @@ restService.post('/', function(req, res) {
     
     console.log(req.body.result.metadata.intentName);
     
-    if(req.body.result.metadata.intentName == "Echo"){
+    if(req.body.result.metadata.intentName == "Play"){
         return res.json({
-            speech: speech,
-            displayText: speech,
+            speech: "Ok Playing the Video",
+            displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
     }else{
