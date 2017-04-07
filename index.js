@@ -18,13 +18,13 @@ restService.post('/', function(req, res) {
     
     console.log("Command: " + req.body.result.parameters.play);
     
-    if(req.body.result.parameters.play === "play"){
+    if(req.body.result.metadata.intentNam === "Play-Intent"){
         return res.json({
             speech: "Ok Playing the Video",
             displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
-    }else if(req.body.result.parameters.play === "stop"){
+    }else if(req.body.result.metadata.intentNam === "Stop-Intent"){
         return res.json({
             speech: "Ok Stoping the Video",
             displayText: "Ok Stoping the Video",
