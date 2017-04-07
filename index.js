@@ -18,13 +18,13 @@ restService.post('/', function(req, res) {
     
     console.log(req.body.result.metadata.intentName);
     
-    if(req.body.result.parameters.cmd == "Play"){
+    if(req.body.result.parameters.cmd.localeCompare("play")){
         return res.json({
             speech: "Ok Playing the Video",
             displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
-    }else if(req.body.result.parameters.cmd == "Stop"){
+    }else if(req.body.result.parameters.cmd.localeCompare("stop")){
         return res.json({
             speech: "Ok Stoping the Video",
             displayText: "Ok Stoping the Video",
