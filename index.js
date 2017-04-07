@@ -16,15 +16,15 @@ restService.post('/', function(req, res) {
   
  //   var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     
-    console.log("Command: " + req.body.result.parameters.cmd);
+    console.log("Command: " + req.body.result.parameters.play);
     
-    if(req.body.result.parameters.cmd === "play"){
+    if(req.body.result.parameters.play === "play"){
         return res.json({
             speech: "Ok Playing the Video",
             displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
-    }else if(req.body.result.parameters.cmd === "stop"){
+    }else if(req.body.result.parameters.play === "stop"){
         return res.json({
             speech: "Ok Stoping the Video",
             displayText: "Ok Stoping the Video",
