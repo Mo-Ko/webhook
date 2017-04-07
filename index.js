@@ -24,10 +24,16 @@ restService.post('/', function(req, res) {
             displayText: "Ok Playing the Video",
             source: 'webhook-echo-sample'
         });    
+    }if if(req.body.result.metadata.intentName == "Stop"){
+        return res.json({
+            speech: "Ok Stoping the Video",
+            displayText: "Ok Stoping the Video",
+            source: 'webhook-echo-sample'
+        });    
     }else{
         return res.json({
-            speech: "ohh great your lucky number is" + speech,
-            displayText: "ohh great your lucky number is" + speech,
+            speech: "Sorry I couldn't get it" ,
+            displayText: "Sorry I couldn't get it",
             source: 'webhook-echo-sample'
     });
     }
