@@ -12,7 +12,7 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/', function(req, res) {
-     console.log("IntentName: " + req.body.result.metadata.intentName);
+     console.log("JSON Data: " + req);
   
  //   var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     
